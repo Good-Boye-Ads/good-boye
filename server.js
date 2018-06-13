@@ -22,7 +22,7 @@ app.use(express.static("public"));
 // ROUTES
 // ===================
 require("./controllers/api-routes.js")(app);
-require("./controlers/html-routes.js")(app);
+require("./controllers/html-routes.js")(app);
 
 // SYNC
 // ===================
