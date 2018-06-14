@@ -25,7 +25,7 @@ module.exports = function(app) {
     });
   });
 
-  app.delete("/api/authors/:id", function(req, res) {
+  app.delete("/api/pets/:id", function(req, res) {
     db.Pets.destroy({
       where: {
         id: req.params.id
