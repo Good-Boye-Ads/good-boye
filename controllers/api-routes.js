@@ -1,4 +1,5 @@
 var db = require("../models");
+var Jimp = require("jimp");
 
 module.exports = function(app) {
   app.get("/api/pets", function(req, res) {
@@ -15,7 +16,14 @@ module.exports = function(app) {
         id: req.params.id
       }
     }).then(function(dbPets) {
-      res.json(dbPets);
+        Jimp.read(Pets.image_url).then(function(image) {
+            image.scaleToFit( w, h[, mode] );
+        }).catch(function (err) {
+        });
+        Jimp.loadFont( path ).then(function (font) {
+            image.print(font, x, y, str, width); // print a message on an image with text wrapped at width
+        });
+      //res.json(dbPets);
     });
   });
 
