@@ -17,7 +17,7 @@ module.exports = function(app) {
       }
     }).then(function(dbPets) {
         Jimp.read(Pets.image_url).then(function(image) {
-            image.scaleToFit( w, h[, mode] );
+            image.scaleToFit( w, h[ mode] );
         }).catch(function (err) {
         });
         Jimp.loadFont( path ).then(function (font) {
