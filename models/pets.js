@@ -1,5 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
     var Pets = sequelize.define("Pets", {
+      
       pet_type: {
         type: DataTypes.STRING,
         allowNull: true,
@@ -38,8 +39,12 @@ module.exports = function(sequelize, DataTypes) {
         validate: {
             len: [1, 300]
         }
-      }
+      },
+    },{
+      timestamp: false,
     });
+  
+    
   
     return Pets;
   };

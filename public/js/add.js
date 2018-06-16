@@ -21,21 +21,22 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             contentType: "application/json",
-            url: window.location + "api/pets/save",
-            data:newPet,
+            url: "/api/pets",
+            data: JSON.stringify(newPet),
             dataType: 'json',
-            success: function (newPet) {
-                $("#postResultDiv").html("<p>" +
-                    "Post Successfully! <br>" +
-                    "--> " + newPet.petType + " " + newPet.petName + " " + newPet.petAge + " " + newPet.petAddres + " " + newPet.petImage +", createdAt: " + newPet.createdAt + "</p>");
+            success:function (newPet) {
+                console.log('my data:', newPet);
+                // $("#postResultDiv").html("<p>" +
+                //     "Post Successfully! <br>" +
+                //     "--> " + newPet.petType + " " + newPet.petName + " " + newPet.petAge + " " + newPet.petAddres + " " + newPet.petImage +", createdAt: " + newPet.createdAt + "</p>");
             },
             error: function (e) {
-                alert("Error!")
-                console.log("ERROR: ", e);
+                alert("Hey Semere there is an Error!")
+                console.log("no success - ERROR: ", e);
             }
         });
         // Reset FormData after Posting
-        resetData();
+        // resetData();
     }
     function resetData() {
         $("#petType").val("");

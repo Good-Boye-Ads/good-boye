@@ -28,7 +28,16 @@ module.exports = function(app) {
   });
 
   app.post("/api/pets", function(req, res) {
-    db.Pets.create(req.body).then(function(dbPets) {
+    console.log('creatin', req.body);
+    var newPet = {
+      pet_type: req.body.petType,
+      pet_name: req.body.petName,
+      pet_age: req.body.petAge,
+      location: req.body.petAddres,
+      image_url: req.body.petImage,
+    }
+    console.log("this is new pet", newPet)
+    db.Pets.create(newPet).then(function(dbPets) {
       res.json(dbPets);
     });
   });
