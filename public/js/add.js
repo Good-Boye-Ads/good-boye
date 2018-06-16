@@ -1,9 +1,10 @@
 $(document).ready(function () {
-
+ console.log('attaching the submit butotn event');
     // SUBMIT FORM
     $("#submit").on("click", function (event) {
         // Prevent the form from submitting via the browser.
         event.preventDefault();
+        console.log('getting lcicked');
         ajaxPost();
     });
     function ajaxPost() {
@@ -14,15 +15,14 @@ $(document).ready(function () {
             petAge: $("#petAge").val().trim(),
             petAddres: $("#petAddres").val().trim(),
             petImage: $("#petImage").val().trim(),
-            created_at: moment().format("YYYY-MM-DD HH:mm:ss")
+            //created_at: moment().format("YYYY-MM-DD HH:mm:ss")
         }
-
         // DO POST
         $.ajax({
             type: "POST",
             contentType: "application/json",
-            url: window.location + "api/users/save",
-            data: JSON.stringify(formData),
+            url: window.location + "api/pets/save",
+            data:newPet,
             dataType: 'json',
             success: function (newPet) {
                 $("#postResultDiv").html("<p>" +
