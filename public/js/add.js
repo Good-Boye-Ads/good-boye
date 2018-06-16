@@ -7,7 +7,6 @@ $(document).ready(function () {
         ajaxPost();
     });
     function ajaxPost() {
-
         // PREPARE FORM DATA
         var newPet = {
             petType: $("#petType").val().trim(),
