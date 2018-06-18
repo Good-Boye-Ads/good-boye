@@ -36,7 +36,7 @@ $(document).ready(function () {
             }
         });
         // Reset FormData after Posting
-        // resetData();
+        resetData();
     }
     function resetData() {
         $("#petType").val("");

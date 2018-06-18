@@ -1,5 +1,5 @@
 INSERT INTO Pets
-    (pet_type, pet_name, pet_age, location, url, image_url)
+    (pet_type, pet_name, pet_age, location, image_url,url)
 VALUES
     ("Cat", "Bert", 2, "San Francisco", "http://www.givemesheltersf.org/adoption/cat.php?id=10724", "http://www.givemesheltersf.org/adoption/picture.php?n=Bert&i=24/a_010724_1528001390.jpg"),
     ("Cat", "Coco", 10, "San Francisco", "http://www.givemesheltersf.org/adoption/cat.php?id=10718&n=Coco", "http://www.givemesheltersf.org/adoption/picture.php?n=Coco&i=18/a_010718_1527459231.jpg"),
