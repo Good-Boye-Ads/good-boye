@@ -47,8 +47,8 @@ module.exports = {
 
         }).catch(function (err) {
             // handle an exception
-            if (error) {
-                callback(error, null);
+            if (err) {
+                callback(err, null);
                 return;
             }
         });
