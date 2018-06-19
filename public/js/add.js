@@ -28,6 +28,7 @@ $(document).ready(function () {
                 console.log('ajax data:', newPet);
             },
             error: function (e) {
+                alert("An error occurred. Double-check your inputs!");
                 console.log("ajax error: ", e);
             }
         });
