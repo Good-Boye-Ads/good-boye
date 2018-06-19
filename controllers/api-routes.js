@@ -1,7 +1,5 @@
 // dependencies
-// var keys = require("../keys.js");
 var db = require("../models");
-var cloudinary = require("cloudinary");
 
 //var adComposer = require("./ad-composer.js")(keys);
 console.log(process.env.CLOUDINARY_NAME);
@@ -9,13 +7,9 @@ console.log(process.env.CLOUDINARY_NAME);
 console.log("This is going on!!!!!");
 // adComposer.composeAd("https://i.imgur.com/39PONo4.jpg", "Waluigi", 7);
 
-module.exports = function (app, keys) {
+module.exports = function (app) {
 
-  // cloudinary API set up
-  cloudinary.config(keys.cloudinary);
-  console.log(keys.cloudinary);
-
-  var adComposer = require("./ad-composer.js")(cloudinary);
+  var adComposer = require("./ad-composer.js");
   adComposer.composeAd("https://i.imgur.com/39PONo4.jpg", "Waluigi", 7);
 
   app.get("/api/pets", function (req, res) {
