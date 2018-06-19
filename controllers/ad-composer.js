@@ -7,13 +7,24 @@ var cloudinary = require("cloudinary");
 cloudinary.config(keys.cloudinary);
 
 module.exports = {
-    composeAd: function (imageUrl, petName, petAge) {
+    composeAd: function (imageUrl, petName, petAge, callback) {
         var text = "Adopt " + petName + ", age " + petAge;
         var composer = this;
 
         composer.jimpify(imageUrl, text, function (error, buffer) {
             console.log("Jimpify error in AD COMPOSE FUNCTION", error);
-            composer.cloudify(buffer);
+            composer.cloudify(buffer, function(error, cloudjson){
+                console.log("CLOUDIFY ERROR", error);
+
+                var imageInfo = {
+                    width: cloudjson.width,
+                    height: cloudjson.height,
+                    url: cloudjson.secure_url
+                }
+
+                console.log("cloud image info", imageInfo);
+                callback(imageInfo);
+            });
         });
     },
     jimpify: function (url, text, callback) {
@@ -32,13 +43,10 @@ module.exports = {
             console.log("JIMPIFY ERROR", err);
         });
     },
-    cloudify: function (buffer) {
+    cloudify: function (buffer, callback) {
         console.log("CLOUDIFY SHOULD BE HAPPENING");
         console.log(buffer);
 
-        cloudinary.v2.uploader.upload_stream({ resource_type: 'image' }, function (error, result) {
-            console.log(result);
-            console.log("CLOUD UPLOAD ERROR", error);
-        }).end(buffer);
+        cloudinary.v2.uploader.upload_stream({ resource_type: 'image' }, callback).end(buffer);
     }
 }
