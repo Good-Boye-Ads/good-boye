@@ -6,8 +6,24 @@ module.exports = function (app) {
   var adComposer = require("./ad-composer.js");
 
   app.get("/api/pets", function (req, res) {
+    // shuffles array
+    // https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
+    function shuffle(a) {
+      var j, x, i;
+      for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+      }
+      return a;
+    }
+
     // this will be used if we have a webpage that shows all the pets in the database
     db.Pets.findAll({}).then(function (dbPets) {
+      // return ten random adoption data
+      shuffle(dbPets);
+      dbPets = dbPets.slice(0, 10);
       res.json(dbPets);
     });
   });
