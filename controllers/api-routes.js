@@ -1,16 +1,8 @@
 // dependencies
 var db = require("../models");
 
-//var adComposer = require("./ad-composer.js")(keys);
-console.log(process.env.CLOUDINARY_NAME);
-
-console.log("This is going on!!!!!");
-// adComposer.composeAd("https://i.imgur.com/39PONo4.jpg", "Waluigi", 7);
-
 module.exports = function (app) {
-
   var adComposer = require("./ad-composer.js");
-  adComposer.composeAd("https://i.imgur.com/39PONo4.jpg", "Waluigi", 7);
 
   app.get("/api/pets", function (req, res) {
     // this will be used if we have a webpage that shows all the pets in the database
@@ -22,10 +14,8 @@ module.exports = function (app) {
   app.post("/api/pets", function (req, res) {
     console.log('creatin', req.body);
 
-    // testing cloudinary
-    // cloudinary.uploader.upload("./doggo.jpeg", function (result) {
-    //   console.log(result)
-    // });
+    // take petImage, run it through jimp, upload to cloudinary,
+    // get back upload url, push into object, push into db
 
     var newPet = {
       pet_name: req.body.petName,
@@ -53,5 +43,4 @@ module.exports = function (app) {
       res.json(dbPets);
     });
   });
-
 };

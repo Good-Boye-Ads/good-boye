@@ -3,14 +3,8 @@ var Jimp = require("jimp");
 var keys = require("../keys.js");
 var cloudinary = require("cloudinary");
 
+// cloudinary set up
 cloudinary.config(keys.cloudinary);
-
-// cloudinary.uploader.upload("/Users/smanik/Desktop/good-boye/controllers/doggo.jpeg", function (result) {
-//     console.log(result);
-// });
-
-// take petImage, run it through jimp, upload to cloudinary,
-// get back upload url, push into object, push into db
 
 module.exports = {
     composeAd: function (imageUrl, petName, petAge) {
@@ -30,7 +24,6 @@ module.exports = {
                 image.resize(250, Jimp.AUTO);
                 image.brightness(-0.5);
                 image.print(font, 20, 20, text, 230);
-                // .write("newdoggo.jpg"); // do buffer instead
                 image.getBuffer(Jimp.MIME_JPEG, callback);
             });
 
