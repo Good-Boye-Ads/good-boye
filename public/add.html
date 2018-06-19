@@ -1,142 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en-us">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>Good Boye &mdash; Free One Page Bootstrap 4 Template by uicookies.com</title>
-  <meta name="description" content="Free Bootstrap 4 Template by uicookies.com">
-  <meta name="keywords" content="Free website templates, Free bootstrap themes, Free template, Free bootstrap, Free website template">
-
-  <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600|Montserrat:200,300,400" rel="stylesheet">
-
-  <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.css">
-  <link rel="stylesheet" href="assets/fonts/ionicons/css/ionicons.min.css">
-  <link rel="stylesheet" href="assets/fonts/law-icons/font/flaticon.css">
-
-  <link rel="stylesheet" href="assets/fonts/fontawesome/css/font-awesome.min.css">
-
-  <link rel="stylesheet" href="assets/css/slick.css">
-  <link rel="stylesheet" href="assets/css/slick-theme.css">
-
-  <link rel="stylesheet" href="assets/css/helpers.css">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/landing-2.css">
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    <title>gB - Add</title>
+    <link rel="icon" type="image/png" href="assets/images/favi.png" sizes="16x16">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700|Source+Sans+Pro:400,600" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
+
+    <!-- ours -->
+    <link rel="stylesheet" type="text/css" href="css/gb_styles.css">
+    <link rel="stylesheet" type="text/css" href="css/gb_styles_add.css">
 </head>
 
-<body data-spy="scroll" data-target="#pb-navbar" data-offset="200">
-
-  <nav class="navbar navbar-expand-lg navbar-dark pb_navbar pb_scrolled-light" id="pb-navbar">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">Good Boye</a>
-      <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#probootstrap-navbar" aria-controls="probootstrap-navbar"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span>
-          <i class="ion-navicon"></i>
-        </span>
-      </button>
+<body>
+    <div id="wrapper">
+        <nav>
+            <div class="container">
+                <a id="nav-logo" href="/"><span>gB</span></a>
+                <div class="other-nav">
+                    <a href="#">install extension</a> <span class="slash">/</span> <a href="https://github.com/Good-Boye-Ads">view on github</a>
+                </div>
+            </div>
+        </nav>
+        <section class="main section is-medium">
+            <div class="container">
+                <h1 class="title">Adoption Ad Form</h1>
+                <div class="main-bar"></div>
+                <div class="main-instructions">
+                    <div class="field">
+                        <label class="label">Pet Name</label>
+                        <div class="control">
+                            <input id="petName" class="input is-medium" type="text" placeholder="e.g Clifford">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Pet Type</label>
+                        <div class="control">
+                            <input id="petType" class="input is-medium" type="text" placeholder="e.g Dog">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Pet Age (in years)</label>
+                        <div class="control">
+                            <input id="petAge" class="input is-medium" type="number" placeholder="e.g 7">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Pet Location</label>
+                        <div class="control">
+                            <input id="petLoc" class="input is-medium" type="text" placeholder="e.g San Francisco">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Link to Pet Adoption Page</label>
+                        <div class="control">
+                            <input id="petUrl" class="input is-medium" type="text" placeholder="e.g https://adoptionsite.com/clifford">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Link to Pet Photo</label>
+                        <div class="control">
+                            <input id="petImage" class="input is-medium" type="text" placeholder="e.g https://cliffordphoto.png">
+                        </div>
+                    </div>
+                    <div class="control submit-form-ctrl">
+                        <button class="button is-primary" id="submit-form">Submit Form</button>
+                    </div>
+            </div>
+        </section>
     </div>
-  </nav>
-  <!-- END nav -->
-  <section class="pb_cover_v3 overflow-hidden cover-bg-indigo cover-bg-opacity text-left pb_gradient_v1 pb_slant-light" id="section-home">
-    <div class="container">
-      <div class="row align-items-center justify-content-center">
-        <div class="col-md-6">
-          <h2 class="heading mb-3">Your Local Pet Adoption Site</h2>
-        </div>
-        <div class="col-md-1">
-        </div>
-        <div class="col-md-5 relative align-self-center">
 
-          <form class="bg-white rounded pb_form_v1">
-            <h2 class="mb-4 mt-0 text-center">Upload your pet information</h2>
-
-            <div class="form-group">
-              <input id="petType" type="text" class="form-control pb_height-50 reverse" placeholder="Pet type">
-            </div>
-            <div class="form-group">
-              <input id="petName" type="text" class="form-control pb_height-50 reverse" placeholder="name">
-            </div>
-            <div class="form-group">
-              <input id="petAge" type="number" class="form-control pb_height-50 reverse" placeholder="Age">
-            </div>
-            <div class="form-group">
-              <input id="petAddres" type="text" class="form-control pb_height-50 reverse" placeholder="city">
-            </div>
-            <div class="form-group">
-              <input id="petImage" type="url" class="form-control pb_height-50 reverse" placeholder="Upload picture">
-            </div>
-            <div class="form-group">
-            </div>
-            <div class="form-group">
-              <input id="submit" type="submit" class="btn btn-primary btn-lg btn-block pb_btn-pill  btn-shadow-blue" value="Submit">
-            </div>
-          </form>
-
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- END section -->
-  <!-- END section -->
-
-  <footer class="pb_footer bg-light" role="contentinfo">
-    <div class="container">
-      <div class="row text-center">
-        <div class="col">
-          <ul class="list-inline">
-            <li class="list-inline-item">
-              <a href="#" class="p-2">
-                <i class="fa fa-facebook"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#" class="p-2">
-                <i class="fa fa-twitter"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#" class="p-2">
-                <i class="fa fa-instagram"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col text-center">
-          <p class="pb_font-14">&copy; 2018 All Rights Reserved.</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- loader -->
-  <div id="pb_loader" class="show fullscreen">
-    <svg class="circular" width="48px" height="48px">
-      <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-      <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#1d82ff" />
-    </svg>
-  </div>
-
-
-
-  <script src="assets/js/jquery.min.js"></script>
-
-  <script src="assets/js/popper.min.js"></script>
-  <script src="assets/js/bootstrap.min.js"></script>
-  <script src="assets/js/slick.min.js"></script>
-  <script src="assets/js/jquery.mb.YTPlayer.min.js"></script>
-
-  <script src="assets/js/jquery.waypoints.min.js"></script>
-  <script src="assets/js/jquery.easing.1.3.js"></script>
-
-  <script src="assets/js/main.js"></script>
-  <script src="js/add.js"></script>
-
+    <!-- ours -->
+    <script src="js/add.js"></script>
 </body>
-
 </html>

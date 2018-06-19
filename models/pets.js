@@ -1,51 +1,61 @@
 module.exports = function(sequelize, DataTypes) {
     var Pets = sequelize.define("Pets", {
       
-      pet_type: {
-        type: DataTypes.STRING,
-        allowNull: true,
+      pet_name: {
+        type:  DataTypes.STRING,
+        allowNull: false,
         validate: {
             len: [1, 25]
         }
       },
-      pet_name: {
-        type:  DataTypes.STRING,
-        allowNull: true,
+      pet_type: {
+        type: DataTypes.STRING,
+        allowNull: false,
         validate: {
             len: [1, 25]
         }
       },
       pet_age: {
         type: DataTypes.INTEGER,
-        allowNull: true,
+        allowNull: false,
       },
       location: {
         type:  DataTypes.STRING,
-        allowNull: true,
+        allowNull: false,
         validate: {
             len: [1, 50]
         }
       },
-      image_url: {
-        type: DataTypes.STRING,
-        allowNull: true,
-        validate: {
-            len: [1, 300]
-        }
-      },
       url: {
         type: DataTypes.STRING,
-        allowNull: true,
+        allowNull: false,
         validate: {
-            len: [1, 300]
+            len: [1, 3000]
         }
       },
-    },{
-      timestamp: false,
+      image_url: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+            len: [1, 3000]
+        }
+      },
+      image_width: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      image_height: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+    },
+    {
+      timestamp: true,
     });
-  
-    
   
     return Pets;
   };
-  
+
+  // changelog: changed timestamp to true (bc i want to see) and added
+  // image_width and image_height, also set all allowNulls to false so that
+  // everything has to be filled out.

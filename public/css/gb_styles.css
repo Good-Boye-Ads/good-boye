@@ -1,0 +1,282 @@
+/* === MAIN STYLES === */
+
+/* note on responsiveness: 
+nixing mobile responsiveness, no time
+have to fix container max width for larger screens 
+and force website to display desktop mode on mobile */
+
+/* html {
+    overflow-x: auto;
+} */
+
+body {
+    color: #0d2327;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    background: #0e272b;
+}
+
+#wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.is-fullheight {
+    min-height: 722px !important;
+}
+
+/* nav */
+
+nav {
+    position: absolute;
+    width: 100%;
+    z-index: 9999;
+    left: 0;
+}
+
+#nav-logo {
+    display: inline-block;
+    background: #0e262a;
+    color: #edb531;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 2em;
+    text-align: center;
+    line-height: 90px;
+    width: 100px;
+    height: 90px;
+}
+
+.other-nav {
+    float: right;
+    line-height: 88px;
+    font-size: 1.15em;
+}
+
+.other-nav a {
+    color: #0d2529;
+}
+
+.other-nav .slash {
+    margin: 0 15px;
+    font-size: 115%;
+    color: #a07922;
+}
+
+/* header */
+
+#masthead {
+    position: relative;
+    background: #edb531;
+    overflow: hidden;
+}
+
+#mast-body {
+    position: relative;
+}
+
+#logo, #logo a {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 6.8rem;
+    font-weight: 700;
+    color: #0d2327;
+    position: relative;
+}
+
+#sub-text, #sub-text strong {
+    font-size: 1.6rem;
+    margin-top: 3rem;
+    color: #0d2327;
+}
+
+#sub-text .sub-desc {
+    float: left;
+
+    /* make responsive */
+    max-width: 550px;
+}
+
+.sub-desc a {
+    font-weight: 600;
+    color: #0d2327;
+}
+
+#sub-text .bar {
+    position: relative;
+    float: left;
+    margin-right: 25px;
+    width: 100px;
+    height: 100px;
+    border-top: 3px solid #b18a2f;
+
+    /* make responsive */
+    top: 1rem;
+}
+
+.doggo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    max-height: 800px;
+}
+
+.doggo>img {
+    height: 100%;
+}
+
+.widget {
+    bottom: 0;
+    width: 100%;
+    position: relative;
+    margin-top: -165px;
+}
+
+.widget-info {
+    display: block;
+    position: relative;
+    height: 90px;
+    line-height: 90px;
+    color: #0d2327 !important;
+    background: #00000014;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0 35px;
+
+    /* make responsive */
+    width: 550px;
+    margin-left: 125px;
+}
+
+.widget-info .arrow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100%;
+    padding: 0 33px;
+    background: #0d2529;
+}
+
+.arrow svg {
+    width: 100%;
+    height: 100%;
+
+    /* prefix this */
+    transform: rotate(-45deg);
+}
+
+.arrow svg g polygon {
+    fill: #dba72d;
+}
+
+/* main */
+
+.main {
+    background: #eeeeee;
+    min-height: 720px;
+    padding: 7rem 1.5rem;
+}
+
+.main .title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: 'Libre Baskerville', serif;
+    color: #0e262a;
+}
+
+.main-bar {
+    position: relative;
+    top: 1rem;
+    width: 65px;
+    height: 0;
+    border-top: 3px solid #edb531;
+    margin: 1rem auto 2.5rem;
+}
+
+.main-instructions {
+    margin-top: 4rem !important;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: #0e272bb8;
+
+    /* make responsive */
+    padding: 0 15vw;
+}
+
+.main-instructions li {
+    margin-bottom: 2rem;
+}
+
+.main-instructions .numero {
+    position: absolute;
+    color: #0e262a;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 1;
+    margin-left: -45px;
+    font-style: italic;
+}
+
+.gb-buttons {
+    text-align: center;
+    margin-top: 65px;
+}
+
+.gb-buttons a {
+    display: inline-block;
+    padding: 15px 40px;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    background: #efbd48;
+    color: #0e262a;
+    margin: 0 1rem;
+}
+
+/* footer */
+
+.credits {
+    padding-bottom: 3rem;
+    background: #dcdcdc;
+}
+
+.credits a {
+    font-size: 2rem;
+    font-family: 'Libre Baskerville', serif;
+    color: #0e262a;
+}
+
+#other-creds {
+    font-size: 1rem;
+    line-height: 3.5rem;
+    float: right;
+}
+
+/* === HALF-ASSED RESPONSIVENESS === */
+
+@media screen and (min-width: 1472px) {
+    .container {
+        max-width: 1152px;
+        width: 1152px;
+    }
+}
+
+/* @media screen and (max-width: 1279px) {
+    #sub-text .sub-desc {
+        max-width: 450px;
+    }
+    
+    #sub-text {
+        font-size: 1.4rem;
+    }
+    
+    .widget-info {
+        width: 450px;
+        font-size: 0.95rem;
+    }
+    
+    #logo, #logo a {
+        font-size: 6.5rem;
+    }
+} */
