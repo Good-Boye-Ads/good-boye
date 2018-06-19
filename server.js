@@ -3,7 +3,6 @@
 require("dotenv").config();
 var express = require("express");
 var bodyParser = require("body-parser");
-var keys = require("./keys.js");
 
 // SETS UP EXPRESS
 // ===================
@@ -23,7 +22,7 @@ app.use(express.static("public"));
 
 // ROUTES
 // ===================
-require("./controllers/api-routes.js")(app, keys);
+require("./controllers/api-routes.js")(app);
 require("./controllers/html-routes.js")(app);
 
 // SYNC

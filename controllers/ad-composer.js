@@ -1,51 +1,52 @@
 // dependencies
 var Jimp = require("jimp");
+var keys = require("../keys.js");
+var cloudinary = require("cloudinary");
 
-// cloudinary.uploader.upload("/Users/smanik/Desktop/good-boye/controllers/doggo.jpeg", function (result) {
-//     console.log(result);
-// });
+// cloudinary set up
+cloudinary.config(keys.cloudinary);
 
-// take petImage, run it through jimp, upload to cloudinary,
-// get back upload url, push into object, push into db
+module.exports = {
+    composeAd: function (imageUrl, petName, petAge, callback) {
+        var text = "Adopt " + petName + ", age " + petAge;
+        var composer = this;
 
-module.exports = function (cloudinary) {
+        composer.jimpify(imageUrl, text, function (error, buffer) {
+            console.log("Jimpify error in AD COMPOSE FUNCTION", error);
+            composer.cloudify(buffer, function(error, cloudjson){
+                console.log("CLOUDIFY ERROR", error);
 
-    return {
-        composeAd: function(imageUrl, petName, petAge) {
-            var text = "Adopt " + petName + ", age " + petAge;
-            var composer = this;
+                var imageInfo = {
+                    width: cloudjson.width,
+                    height: cloudjson.height,
+                    url: cloudjson.secure_url
+                }
 
-            composer.jimpify(imageUrl, text, function (error, buffer) {
-                console.log("Jimpify error in AD COMPOSE FUNCTION", error);
-                composer.cloudify(buffer);
+                console.log("cloud image info", imageInfo);
+                callback(imageInfo);
             });
-        },
-        jimpify: function(url, text, callback) {
-            Jimp.read(url).then(function (image) {
-                console.log("JIMPIFY SHOULD BE HAPPENING!");
+        });
+    },
+    jimpify: function (url, text, callback) {
+        Jimp.read(url).then(function (image) {
+            console.log("JIMPIFY SHOULD BE HAPPENING!");
 
-                Jimp.loadFont(Jimp.FONT_SANS_16_WHITE).then(function (font) {
-                    image.resize(250, Jimp.AUTO);
-                    image.brightness(-0.5);
-                    image.print(font, 20, 20, text, 230);
-                    // .write("newdoggo.jpg"); // do buffer instead
-                    image.getBuffer(Jimp.MIME_JPEG, callback);
-                });
-
-            }).catch(function (err) {
-                // handle an exception
-                console.log("JIMPIFY ERROR", err);
+            Jimp.loadFont(Jimp.FONT_SANS_16_WHITE).then(function (font) {
+                image.resize(250, Jimp.AUTO);
+                image.brightness(-0.5);
+                image.print(font, 20, 20, text, 230);
+                image.getBuffer(Jimp.MIME_JPEG, callback);
             });
-        },
-        cloudify: function(buffer) {
-            console.log("CLOUDIFY SHOULD BE HAPPENING");
-            console.log(buffer);
 
-            cloudinary.v2.uploader.upload_stream({ resource_type: 'image' }, function (error, result) {
-                console.log(result);
-                console.log("CLOUD UPLOAD ERROR", error);
-            }).end(buffer);
-        }
+        }).catch(function (err) {
+            // handle an exception
+            console.log("JIMPIFY ERROR", err);
+        });
+    },
+    cloudify: function (buffer, callback) {
+        console.log("CLOUDIFY SHOULD BE HAPPENING");
+        console.log(buffer);
+
+        cloudinary.v2.uploader.upload_stream({ resource_type: 'image' }, callback).end(buffer);
     }
-
 }
