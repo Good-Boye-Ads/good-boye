@@ -34,7 +34,13 @@ module.exports = function (app) {
 
     // take petImage, run it through jimp, upload to cloudinary,
     // get back upload url, push into object, push into db
-    adComposer.composeAd(input.petImage, input.petName, input.petAge, function (imageInfo) {
+    adComposer.composeAd(input.petImage, input.petName, input.petAge, function (error, imageInfo) {
+      if (error) {
+        console.log("composeAd error:", error);
+        res.status(400).send("Bad request!");
+        return;
+      }
+
       var newPet = {
         pet_name: input.petName,
         pet_type: input.petType,

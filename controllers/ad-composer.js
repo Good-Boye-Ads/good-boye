@@ -12,9 +12,16 @@ module.exports = {
         var composer = this;
 
         composer.jimpify(imageUrl, text, function (error, buffer) {
-            console.log("Jimpify error in AD COMPOSE FUNCTION", error);
+            if (error) {
+                callback(error, null);
+                return;
+            }
+
             composer.cloudify(buffer, function(error, cloudjson){
-                console.log("CLOUDIFY ERROR", error);
+                if (error) {
+                    callback(error, null);
+                    return;
+                }
 
                 var imageInfo = {
                     width: cloudjson.width,
@@ -23,7 +30,7 @@ module.exports = {
                 }
 
                 console.log("cloud image info", imageInfo);
-                callback(imageInfo);
+                callback(null, imageInfo);
             });
         });
     },
@@ -40,7 +47,10 @@ module.exports = {
 
         }).catch(function (err) {
             // handle an exception
-            console.log("JIMPIFY ERROR", err);
+            if (error) {
+                callback(error, null);
+                return;
+            }
         });
     },
     cloudify: function (buffer, callback) {
