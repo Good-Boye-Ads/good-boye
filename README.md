@@ -9,8 +9,8 @@ goodBoye's API provides lesser-known pet shelters with a platform to upload info
     Jimp
     Sequelize
     CatBlock
-    Bulma (CSS framework)
-    Cloudinary (image hosting API)
+    Cloudinary
+    Bulma
 
 ## Installation
 
