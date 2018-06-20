@@ -1,29 +1,21 @@
-# Good_Boye_Ads
+# goodBoye
 
-good-boye-adds is an add block extension that can be added to your browser extension.
-It blocks adds and instead displays pictures of beautiful pets ready for adoption.
+**goodBoye is an Ad-block extension that blocks consumer ads and instead displays ads of beautiful pets ready for adoption.**
 
-It provides local pet shelters with a plateform to uplaod the informaion 
-and picture of their pets for potentiol adoption.
+goodBoye's API provides lesser-known pet shelters with a platform to upload information about adoptive pets. This information is used to compose ads, which are then fed to the goodBoye extension.
 
-## Built With
+## Built Using
 
-    Jimp (Node package)
-    Postman
+    Jimp
     Sequelize
-    Heroku
     CatBlock
     Bulma (CSS framework)
     Cloudinary (image hosting API)
 
 ## Installation
 
-Users can install this add blocker from chrome extensions.
+The goodBoye extension is currently a prototype and unavailable on browser web stores. To download and use it, clone the **gb-extension** repository to your desktop and then follow [these instructions to build the extension for personal use](https://github.com/CatBlock/catblock/wiki/Building-the-extension).
 
-## Authors
+## Visit the Site
 
-Sunny,Eve,Semere,Gustavo
-
-## License
-
-This project is licensed under the MIT License
+[goodBoye](https://lit-refuge-77106.herokuapp.com/)
