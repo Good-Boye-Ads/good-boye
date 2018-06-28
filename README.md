@@ -6,9 +6,10 @@ goodBoye's API provides lesser-known pet shelters with a platform to upload info
 
 ## Built Using
 
-    Jimp
-    Sequelize
     CatBlock
+    Express
+    Sequelize
+    Jimp
     Cloudinary
     Bulma
 
