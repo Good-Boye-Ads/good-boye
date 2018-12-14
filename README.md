@@ -1,22 +1,31 @@
 # goodBoye
 
-**goodBoye is an Ad-block extension that blocks consumer ads and instead displays ads of beautiful pets ready for adoption.**
+An ad block extension that replaces consumer ads with animal adoption ads. Based on CatBlock.
 
-goodBoye's API provides lesser-known pet shelters with a platform to upload information about adoptive pets. This information is used to compose ads, which are then fed to the goodBoye extension.
+goodBoye's API provides lesser-known pet shelters with a platform to upload information and links about adoptive pets. This information is used to compose ads, which are then fed to the ad block extension.
 
-## Built Using
+Screenshot illustrating ad block (with test data): https://i.imgur.com/dAUXJUq.png 
 
-    CatBlock
-    Express
-    Sequelize
-    Jimp
-    Cloudinary
-    Bulma
+Landing page: https://lit-refuge-77106.herokuapp.com/
+
+## Implementation
+
+* Cloudinary for hosting pet images
+* Jimp for modifying images, resizing and adding text
+* MySQL database for storing data on shelters and adoptive pets
+* CatBlock forked and modified to replace consumer ads with adoption ads from our database
+* Bulma framework for UI components on landing page
 
 ## Installation
 
-The goodBoye extension is currently a prototype and unavailable on browser web stores. To download and use it, clone the **gb-extension** repository to your desktop and then follow [these instructions to build the extension for personal use](https://github.com/CatBlock/catblock/wiki/Building-the-extension).
+goodBoye is a prototype. To build the extension for personal use, clone the **gb-extension** repository to your desktop and then [follow these instructions](https://github.com/CatBlock/catblock/wiki/Building-the-extension).
 
-## Visit the Site
+## Technologies
 
-[goodBoye](https://lit-refuge-77106.herokuapp.com/)
+* [CatBlock](https://github.com/CatBlock)
+* [Cloudinary](https://cloudinary.com/documentation/node_integration)
+* [Jimp](https://www.npmjs.com/package/jimp)
+* [Express](https://expressjs.com/)
+* [Sequelize](https://docs.sequelizejs.com/)
+* [MySQL](https://www.mysql.com/)
+* [Bulma](https://bulma.io/)
