@@ -18,7 +18,7 @@ Landing page: https://lit-refuge-77106.herokuapp.com/
 
 ## Installation
 
-goodBoye is a prototype. To build the extension for personal use, clone the **gb-extension** repository and then [follow these instructions](https://github.com/CatBlock/catblock/wiki/Building-the-extension).
+goodBoye is a prototype. To build the extension for personal use, clone the **gb-extension** repository to your computer and then [follow these instructions](https://github.com/CatBlock/catblock/wiki/Building-the-extension).
 
 ## Technologies
 
