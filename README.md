@@ -1,8 +1,8 @@
 # goodBoye
 
-An ad block extension that replaces consumer ads with animal adoption ads. Based on CatBlock.
+An ad-block extension that replaces consumer ads with animal adoption ads. Based on CatBlock.
 
-goodBoye's API provides lesser-known pet shelters with a platform to upload information and links about adoptive pets. This information is used to compose ads, which are then fed to the ad block extension.
+goodBoye's API provides lesser-known pet shelters with a platform to upload information and links about adoptive pets. This information is used to compose ads, which are then fed to the ad-block extension.
 
 Screenshot illustrating ad block (with test data): https://i.imgur.com/dAUXJUq.png 
 
