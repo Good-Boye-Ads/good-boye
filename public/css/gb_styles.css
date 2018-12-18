@@ -215,24 +215,36 @@ nav {
     font-size: 1.25rem;
     line-height: 1.5;
     color: #0e272bb8;
-    /* UGLY BTW make responsive */
-    padding: 0 15rem;
 }
 
-.main-instructions li {
-    margin-bottom: 2rem;
+/* new instructions section */
+
+.mi-info {
+    text-align: center;
 }
 
-.main-instructions .numero {
-    position: absolute;
-    color: #0e262a;
-    font-family: 'Libre Baskerville', serif;
-    font-weight: 700;
-    font-size: 2rem;
-    line-height: 1;
-    margin-left: -45px;
-    font-style: italic;
+.mi-subtitle {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
+
+.mi-info p {
+    text-align: left;
+    margin-top: 2rem;
+    padding: 0 1rem;
+    font-size: 95%;
+}
+
+.mi-info p a {
+    color: #dba815;
+    font-weight: bold;
+}
+
+.mi-info strong {
+    color: #0e272bb8;
+}
+
+/* end new instructions section */
 
 .gb-buttons {
     text-align: center;

@@ -43,3 +43,8 @@ nav {
     height: auto;
     border-radius: 0;
 }
+
+/* new */
+.main-instructions {
+    padding: 0 15rem;
+}
